@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Facebook - Đăng nhập hoặc đăng ký</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="queriesfix.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+</head>
+
+<body>
+
+    <div id="top" class="top">
+        <div class="home">
+            <div id="label" class="label">
+                <div class="label_fb">
+                    <div class="logo"><img class="logo_fb" id="logofb" src="fblogo.png" alt="Facebook"></div>
+                    <h2 class="gioithieu">Facebook giúp bạn kết nối và chia sẻ với mọi người trong cuộc sống của bạn.
+                    </h2>
+                   
+
+                </div>
+            </div>
+            <div class="form">
+                <div class="form_login">
+                    <div class="login">
+                        <div id="login">
+                            <input type="text" class="email_pass" name="" id="email"
+                                placeholder="Email hoặc số điện thoại">
+                            <input type="password" class="email_pass" name="" id="pass" placeholder="Mật khẩu">
+                            <h3 style="display:none; position: relative; font-size: 12px; 
+                            margin-top: -1px;margin-bottom: -1px;" id="checkpw"></h3>
+                            <button title="Đăng nhập vào Facebook" id="postlogin" class="dangnhap">Đăng nhập</button>
+                            <br>
+                            <a title="Quên mật khẩu Facebook" class="forget_pw" href="https://www.facebook.com/login/identify/?ctx=recover&ars=facebook_login&from_login_screen=0">Quên mật khẩu?</a>
+                            <div class="gachke"></div>
+                            <button type="button" onclick="signin()" title="Tạo tài khoản Facebook miễn phí" class="reg"
+                                id="signin_btn">Tạo tài khoản mới</button>
+                        </div>
+                        <dialog id="form_signin_dialog" class="form_reg">
+                            <div class="label_signin">
+                                <div class="reg_text">Đăng ký</div>
+                                <div class="nhanh_chong">Nhanh chóng và dễ dàng.</div>
+                                <div class="exit">
+                                    <img onclick="signin()" width="24" height="24" src="x.png" alt="x">
+                                </div>
+                            </div>
+                            <div style="border: 0.1px solid #ebe7e7; margin-left: -12px; width: 432px;"></div>
+                            <div class="sigin_info">
+                                <div class="hoten">
+                                    <input type="text" class="ho" placeholder="Họ">
+                                    <input type="text" class="ten" placeholder="Tên">
+                                </div>
+                                <div class="mail_pw">
+                                    <input type="text" class="sdt" placeholder="Số di động hoặc email">
+                                    <input type="password" class="pass" placeholder="Mật khẩu mới">
+                                </div>
+                                <div class="label_date">Ngày sinh <a style="text-decoration: none;" href="#"
+                                        title="Nhấp chuột để biết thêm thông tin">�</a>
+                                </div>
+                                <div class="date_of_birth">
+                                    <select aria-label="Ngày" name="birthday_day" id="day" title="Ngày" class="select_date">
+                                    </select>
+                                    <select aria-label="Tháng" name="birthday_month" id="month" title="Tháng" class="select_month">
+                                    </select>
+                                    <select aria-label="Năm" name="birthday_year" id="year" title="Năm"
+                                        class="select_years"> 
+                                    </select>
+                                </div>
+                                <div class="label_date">Giới tính <a style="text-decoration: none;" href="#"
+                                        title="Nhấp chuột để biết thêm thông tin">�</a>
+                                </div>
+                                <div class="sex">
+                                    <p class="nu">Nữ<input type="radio" name="gt" id=check></p>
+                                    <p class="nam">Nam<input width="" type="radio" name="gt" id="check"></p>
+                                    <p class="tuychon">Tùy chỉnh<input type="radio" name="gt" id=check1></p>
+                                </div>
+                                <div class="label_thoa_thuan">
+                                    <p class="thoa_thuan">Bằng cách nhấp vào Đăng ký, bạn đồng ý với <a
+                                            style="text-decoration: none;" href="#">Điều khoản</a>, <a href="#"
+                                            style="text-decoration: none;">Chính sách dữ liệu</a> và
+                                        <a href="#" style="text-decoration: none;">Chính sách cookie</a> của chúng tôi.
+                                        Bạn có thể nhận được
+                                        thông báo của chúng tôi qua SMS và hủy nhận bất kỳ lúc nào.</p>
+                                </div>
+                                <div>
+                                    <button type="button" onclick="signin()" title="Đăng ký Facebook miễn phí"
+                                        class="reg_2" id="signin_btn">Đăng ký</button>
+                                </div>
+                            </div>
+
+                        </dialog>
+                    </div>
+                </div>
+                <div id="reg_page" class="reg_page"><a title="Tạo FanPage" href="#" class="link_page">Tạo
+                        Trang</a> dành cho người nổi tiếng, nhãn hiệu hoặc doanh nghiệp.</div>
+            </div>
+        </div>
+    </div>
+    <div id="bottom" class="bottom">
+        <div class="link">
+            <div class="lang">
+                <ol>
+                    <ul>
+                        <li><a id="tv" href="#a"><span>Tiếng Việt</span></a></li>
+                        <li><a id="ta" href="#a">English (UK)</a></li>
+                        <li><a id="tq" href="#a">中文(台灣)</a></li>
+                        <li><a id="a" href="#a">日本語</a></li>
+                        <li><a id="hq" href="#a">한국어</a></li>
+                        <li><a id="tl" href="#a">ภาษาไทย</a></li>
+                        <li><a id="fr" href="#a">Français (France)</a></li>
+                        <li><a id="es" href="#a">Español</a></li>
+                        <li><a id="a" href="#a">Português (Brasil)</a></li>
+                        <li><a id="a" href="#a">Deutsch</a></li>
+                        <li><a id="a" href="#a">Italiano</a></li>
+                        <!-- <li id="add"><img class="add" width="28" height="18" src="add.jpg" alt="add"></li> -->
+                        <li id="add"><button id="btnadd"><img src="btnadd.png" alt=""></button></li>
+
+                    </ul>
+
+                </ol>
+            </div>
+            <div id="gachke2" style="border: 0.5px solid #f8f2f2; margin-left: 90px; width: 950px;"></div>
+            <div class="line1">
+                <ol>
+                    <ul>
+                        <li class="dk"><a id="a" href="#top">Đăng ký</a></li>
+                        <li><a id="a" href="#top">Đăng nhập</a></li>
+                        <li><a id="a" href="#a">Messenger</a></li>
+                        <li><a id="a" href="#a">Facebook Lite</a></li>
+                        <li><a id="a" href="#a">Watch</a></li>
+                        <li><a id="a" href="#a">Danh bạ</a></li>
+                        <li><a id="a" href="#a">Trang</a></li>
+                        <li><a id="a" href="#a">Hạng mục Trang</a></li>
+                        <li><a id="a" href="#a">Địa điểm</a></li>
+                        <li><a id="a" href="#a">Trò chơi</a></li>
+                        <li><a id="a" href="#a">Vị trí</a></li>
+                        <li><a id="a" href="#a">Marketplace</a></li>
+                        <li><a id="a" href="#a">Facebook Pay</a></li>
+                    </ul>
+                </ol>
+            </div>
+            <div class="line2">
+                <ol>
+                    <ul>
+                        <li class="dk"><a id="a" href="#a">Nhóm</a></li>
+                        <li><a id="a" href="#a">Oculus</a></li>
+                        <li><a id="a" href="#a">Portal</a></li>
+                        <li><a id="a" href="#a">Instagram</a></li>
+                        <li><a id="a" href="#a">Địa phương</a></li>
+                        <li><a id="a" href="#a">Chiến dịch gây quỹ</a></li>
+                        <li><a id="a" href="#a">Dịch vụ</a></li>
+                        <li><a id="a" href="#a">Trung tâm thông tin bỏ phiếu</a></li>
+                        <li><a id="gt" href="#a">Giới thiệu</a></li>
+                        <li><a id="a" href="#a">Tạo quảng cáo</a></li>
+                        <li><a id="a" href="#a">Tạo Trang</a></li>
+                    </ul>
+                </ol>
+            </div>
+            <div class="line3">
+                <ol>
+                    <ul>
+                        <li class="dk"><a id="a" href="#a">Nhà phát triển</a></li>
+                        <li><a id="a" href="#a">Tuyển dụng</a></li>
+                        <li><a id="a" href="#a">Quyền riêng tư</a></li>
+                        <li><a id="a" href="#a">Cookie</a></li>
+                        <li><a id="a" href="#a">Lựa chọn quảng cáo</a></li>
+                        <li><a id="a" href="#a">Điều khoản</a></li>
+                        <li><a id="tg" href="#a">Trợ giúp</a></li>
+                    </ul>
+                </ol>
+            </div>
+            <div id="fb2020">
+                <p>Facebook © 2021</p>
+            </div>
+        </div>
+    </div>
+    <script src="backend.js"></script>
+    <!-- signin account -->
+    <script src="signin.js"></script>
+    <!-- bao cam xuc -->
+   <script src="option.js"></script>
+</body>
+
+</html>
